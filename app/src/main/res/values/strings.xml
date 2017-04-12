@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name" translatable="false">Password Manager</string>
+
+    <string name="settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="see_app_onboaridng">See App On boarding</string>
+    <string name="rate_app">Rate App</string>
+    <string name="on_boarding_screen">On Boarding Screen</string>
+    <string name="check_my_other_apps">Check my other apps</string>
+    <string name="filter">Filter</string>
+    <string name="share_app">Share App</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="select">Select</string>
+
+    <string name="slide_1_title">Password Manager App</string>
+    <string name="slide_1_desc">App to manage your passwords in a very simple yet secured way!</string>
+
+    <string name="slide_2_title">Secured!</string>
+    <string name="slide_2_desc">The passwords are stored in your device and not on a cloud service. The app does not require internet connection / permission.</string>
+
+    <string name="slide_3_title">Sorting and Searching</string>
+    <string name="slide_3_desc">Alphabetically sort and search for any password you are looking for!</string>
+
+    <string name="slide_4_title">Delete Password</string>
+    <string name="slide_4_desc">Press and hold each Password to delete it from list of Passwords!</string>
+
+    <string name="update_key">Update Key</string>
+
+    <string name="about_app">App to manage your passwords in a very simple and secured way! The passwords are stored in your device and not on a cloud. The app does not require internet connection / permission.</string>
+
+</resources>

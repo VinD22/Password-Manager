@@ -14,11 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
         android:padding="10dp"
-        android:text="@string/about_app"
-        />
+        android:text="@string/about_app" />
 
     <Button
-        android:id="@+id/update_balance"
+        android:id="@+id/update_key"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/about_text"
@@ -30,25 +29,25 @@
         android:textColor="@color/white" />
 
     <Button
+        android:id="@+id/see_app_onboarding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/update_balance"
+        android:layout_below="@id/update_key"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-        android:id="@+id/see_app_onboarding"
         android:background="@color/colorPrimary"
         android:text="@string/see_app_onboaridng"
         android:textColor="@color/white" />
 
     <Button
+        android:id="@+id/other_apps_by_me"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/see_app_onboarding"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
-        android:id="@+id/other_apps_by_me"
         android:background="@color/colorPrimary"
         android:text="@string/check_my_other_apps"
         android:textColor="@color/white" />
@@ -56,15 +55,15 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="#df4e37"
-        android:layout_above="@+id/lin" />
+        android:layout_above="@+id/lin"
+        android:background="#df4e37" />
 
     <LinearLayout
+        android:id="@+id/lin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:id="@+id/lin"
         android:weightSum="2">
 
         <Button

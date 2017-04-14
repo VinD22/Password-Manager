@@ -31,7 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         mSeeAppOnBoarding = (Button) findViewById(R.id.see_app_onboarding);
-        mUpdateBalance = (Button) findViewById(R.id.update_balance);
+        mUpdateBalance = (Button) findViewById(R.id.update_key);
         mRateApp = (Button) findViewById(R.id.rate_app);
         mShareApp = (Button) findViewById(R.id.share_app);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -56,7 +56,7 @@ public class SettingsActivity extends AppCompatActivity {
         mUpdateBalance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, UpdateBalance.class);
+                Intent intent = new Intent(SettingsActivity.this, UpdateKey.class);
                 startActivity(intent);
             }
         });

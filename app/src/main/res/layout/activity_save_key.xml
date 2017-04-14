@@ -31,11 +31,25 @@
         android:inputType="textPassword"
         />
 
+    <EditText
+        android:id="@+id/re_enter_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:hint="@string/re_enter_key"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:inputType="textPassword"
+        />
+
     <Button
-        android:id="@+id/enter"
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/enter"
+        android:text="@string/save"
         android:paddingRight="25dp"
         android:paddingLeft="25dp"
         android:paddingTop="10dp"

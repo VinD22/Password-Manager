@@ -32,4 +32,14 @@
 
     <string name="about_app">App to manage your passwords in a very simple and secured way! The passwords are stored in your device and not on a cloud. The app does not require internet connection / permission.</string>
 
+    <string name="share_text">TODO - SHARE TEXT</string>
+    <string name="enter_app_key">Enter App key</string>
+    <string name="save">Save</string>
+    <string name="enter">Enter Key</string>
+    <string name="re_enter_key">Re-Enter Key</string>
+    <string name="enter_key">Enter Key</string>
+    <string name="empty_fields">Empty Field(s)</string>
+    <string name="keys_should_be_same">keys should be same</string>
+    <string name="incorrect_key_entered">Incorrect Key Entered</string>
+
 </resources>

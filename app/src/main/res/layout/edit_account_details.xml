@@ -11,12 +11,12 @@
     <!--private String password;-->
 
     <Button
-        android:id="@+id/add_account_details"
+        android:id="@+id/update_account_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/add_account_details"
+        android:text="@string/update_account_details"
         android:textColor="@color/white" />
 
     <ScrollView

@@ -1,26 +1,29 @@
 package manager.password.app.v.passwordmanager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import adapter.AccountDetailsAdapter;
 import io.realm.Realm;
+import io.realm.RealmResults;
 import model.AccountDetails;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        realm = Realm.getDefaultInstance();
 
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         boolean hasWatchedTutorial = prefs.getBoolean(HAS_WATCHED_TUTORIAL, false);
@@ -95,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
         recList.setLayoutManager(layoutManager);
         recList.setHasFixedSize(true);
 
-        recList.addOnScrollListener(new RecyclerView.OnScrollListener(){
+        recList.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy){
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 if (dy > 0)
                     mAddAccountDetail.hide();
                 else if (dy < 0)
@@ -135,7 +140,16 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.info:
-                Toast.makeText(MainActivity.this, "TODO : Show Popup", Toast.LENGTH_LONG).show();
+
+                new AlertDialog.Builder(MainActivity.this, R.style.MyDialogTheme)
+                        .setMessage(R.string.slide_2_desc)
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+
+                        .show();
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -145,7 +159,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void getProductsList() {
+    private void getAccountDetailsList() {
+
+        listOfAccountDetails.clear();
+        RealmResults<AccountDetails> productResults =
+                realm.where(AccountDetails.class).findAll();
+
+        productResults = productResults.sort("title");
+
+        for (AccountDetails p : productResults) {
+            final AccountDetails tempAccountDetails = new AccountDetails();
+            tempAccountDetails.setId(p.getId());
+            tempAccountDetails.setTitle(p.getTitle());
+            tempAccountDetails.setUsername(p.getUsername());
+            tempAccountDetails.setPassword(p.getPassword());
+            tempAccountDetails.setAdditionalData(p.getAdditionalData());
+            listOfAccountDetails.add(tempAccountDetails);
+        }
+
+        mAdapter = new AccountDetailsAdapter(MainActivity.this, listOfAccountDetails);
+        recList.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+
+        Log.i("totalAccountDetails", " " + listOfAccountDetails.size());
+        // Toast.makeText(this, "AccountDetails Size : " + listOfAccountDetails.size(), Toast.LENGTH_SHORT).show();
 
     }
 
@@ -153,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        getProductsList();
+        getAccountDetailsList();
     }
 
 }

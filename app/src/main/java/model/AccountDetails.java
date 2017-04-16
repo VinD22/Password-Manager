@@ -9,7 +9,7 @@ public class AccountDetails extends RealmObject {
     private String title;
     private String username;
     private String password;
-    private String addtionalData;
+    private String additionalData;
 
     public int getId() {
         return id;
@@ -43,12 +43,12 @@ public class AccountDetails extends RealmObject {
         this.password = password;
     }
 
-    public String getAddtionalData() {
-        return addtionalData;
+    public String getAdditionalData() {
+        return additionalData;
     }
 
-    public void setAddtionalData(String addtionalData) {
-        this.addtionalData = addtionalData;
+    public void setAdditionalData(String additionalData) {
+        this.additionalData = additionalData;
     }
 
 }

@@ -6,20 +6,17 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
-    <color name="credited">#56c459</color>
-    <color name="debited">#ec5447</color>
-
     <!-- dots inactive colors -->
-    <color name="dot_dark_screen1">#BD00A99D</color>
-    <color name="dot_dark_screen2">#BD00A99D</color>
-    <color name="dot_dark_screen3">#BD00A99D</color>
-    <color name="dot_dark_screen4">#BD00A99D</color>
+    <color name="dot_dark_screen1">#beeceded</color>
+    <color name="dot_dark_screen2">#beeceded</color>
+    <color name="dot_dark_screen3">#beeceded</color>
+    <color name="dot_dark_screen4">#beeceded</color>
 
     <!-- dots active colors -->
-    <color name="dot_light_screen1">#adffffff</color>
-    <color name="dot_light_screen2">#adffffff</color>
-    <color name="dot_light_screen3">#adffffff</color>
-    <color name="dot_light_screen4">#adffffff</color>
+    <color name="dot_light_screen1">#f1ffffff</color>
+    <color name="dot_light_screen2">#f1ffffff</color>
+    <color name="dot_light_screen3">#f1ffffff</color>
+    <color name="dot_light_screen4">#f1ffffff</color>
 
     <array name="array_dot_active">
         <item>@color/dot_light_screen1</item>

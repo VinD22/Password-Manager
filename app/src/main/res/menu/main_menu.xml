@@ -6,7 +6,7 @@
 
     <item
         android:id="@+id/info"
-        android:title="i"
+        android:icon="@drawable/info"
         android:orderInCategory="10"
         app:showAsAction="always" />
 

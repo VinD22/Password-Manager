@@ -1,10 +1,12 @@
 package adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.realm.Realm;
+import manager.password.app.v.passwordmanager.EditAccountDetails;
 import manager.password.app.v.passwordmanager.R;
 import model.AccountDetails;
 
@@ -44,6 +47,18 @@ public class AccountDetailsAdapter extends RecyclerView.Adapter<AccountDetailsAd
     public void onBindViewHolder(final RecyclerViewHolder viewHolder, final int position) {
 
         final AccountDetails tempAccountDetails = data.get(viewHolder.getAdapterPosition());
+
+        viewHolder.mTitle.setText(tempAccountDetails.getTitle());
+        viewHolder.mViewAccountDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(mContext, EditAccountDetails.class);
+                intent.putExtra("id", tempAccountDetails.getId());
+                mContext.startActivity(intent);
+
+            }
+        });
 
 //        viewHolder.mLinearLayout.setOnLongClickListener(new View.OnLongClickListener() {
 //            @Override
@@ -119,14 +134,15 @@ public class AccountDetailsAdapter extends RecyclerView.Adapter<AccountDetailsAd
     public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         public LinearLayout placeHolder;
         public LinearLayout mLinearLayout;
-        protected TextView mAccountDetailsName, mAccountDetailsAmount;
+        protected TextView mTitle;
+        protected ImageButton mViewAccountDetails;
 
         public RecyclerViewHolder(View itemView) {
             super(itemView);
             mLinearLayout = (LinearLayout) itemView.findViewById(R.id.lin);
             placeHolder = (LinearLayout) itemView.findViewById(R.id.mainHolder);
-            mAccountDetailsName = (TextView) itemView.findViewById(R.id.transaction_name);
-            mAccountDetailsAmount = (TextView) itemView.findViewById(R.id.transaction_amount);
+            mTitle = (TextView) itemView.findViewById(R.id.title);
+            mViewAccountDetails = (ImageButton) itemView.findViewById(R.id.view_account_details);
         }
 
     }

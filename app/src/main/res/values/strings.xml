@@ -20,7 +20,7 @@
     <string name="slide_1_desc">App to manage your passwords in a very simple yet secured way!</string>
 
     <string name="slide_2_title">Secured!</string>
-    <string name="slide_2_desc">The passwords are stored in your device and not on a cloud service. The app does not require internet connection / permission.</string>
+    <string name="slide_2_desc">The account details are stored in your device and not on a cloud service. The app does not require internet connection.</string>
 
     <string name="slide_3_title">Sorting and Searching</string>
     <string name="slide_3_desc">Alphabetically sort and search for any password you are looking for!</string>
@@ -41,5 +41,14 @@
     <string name="empty_fields">Empty Field(s)</string>
     <string name="keys_should_be_same">keys should be same</string>
     <string name="incorrect_key_entered">Incorrect Key Entered</string>
+    <string name="add_account_details">Add Account Details</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_additional_information_optional">Enter Additional Info</string>
+    <string name="update_account_details">Update Account Details</string>
+    <string name="delete_account_details">Delete Account Details</string>
+    <string name="confirm_delete">Are you sure you want to delete?</string>
+    <string name="ok">Ok</string>
 
 </resources>

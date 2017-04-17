@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.Random;
+
 import io.realm.Realm;
 import model.AccountDetails;
 
@@ -54,7 +56,8 @@ public class AddAccountDetail extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(AddAccountDetail.this, "Pending - Password Generator", Toast.LENGTH_SHORT).show();
+                String randomString = getRandomString();
+                mPassword.setText(randomString);
 
             }
         });
@@ -103,6 +106,20 @@ public class AddAccountDetail extends AppCompatActivity {
 
 
 
+
+    }
+
+    private String getRandomString() {
+
+        String randomChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()";
+        StringBuilder randomString = new StringBuilder();
+        Random rnd = new Random();
+        while (randomString.length() < 11) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * randomChars.length());
+            randomString.append(randomChars.charAt(index));
+        }
+        String saltStr = randomString.toString();
+        return saltStr;
 
     }
 

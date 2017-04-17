@@ -25,8 +25,8 @@
     <string name="slide_3_title">Sorting and Searching</string>
     <string name="slide_3_desc">Alphabetically sort and search for any password you are looking for!</string>
 
-    <string name="slide_4_title">Delete Password</string>
-    <string name="slide_4_desc">Press and hold each Password to delete it from list of Passwords!</string>
+    <string name="slide_4_title">Password Generator</string>
+    <string name="slide_4_desc">Lets your generate passwords for you, which you don\'t have to remember</string>
 
     <string name="update_key">Update Key</string>
 
